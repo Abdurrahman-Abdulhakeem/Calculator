@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(112, 111, 111);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 50vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    background-color: #000;
+    margin: 20px 0;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.output {
+    grid-column: 1 / -1;
+    color: #fff;
+    /* background-color: #000; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+
+}
+
+.span {
+    grid-column: span 2;
+}
+
+.output .time {
+    align-self: flex-start;
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.2rem;
+}
+
+.output .upper-display {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .lower-display {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background-color: #333;
+    margin: 5px;
+}
+.calculator-grid .number {
+    color: #fff;
+}
+
+.calculator-grid .delete-num, .clear {
+    color: rgb(163, 23, 23);
+}
+
+.calculator-grid .operator {
+    color: rgb(40, 153, .9);
+}
+
+.calculator-grid .equals {
+    background-color: rgb(40, 153, .9);
+    color: #fff;
+}
+
+.calculator-grid .equals:hover {
+    background-color: rgba(108, 214, 70, 0.8);
+}
+
+
+.calculator-grid > button:hover {
+    background-color: rgb(88, 88, 88);
+}
+
+
+@media(max-width:550px) {
+   
+    .calculator-grid > button {
+        font-size: 1.3rem;
+    }
+
+    .output .time {
+        font-size: 1rem;
+    }
+    
+    .output .upper-display {
+        font-size: 1.3rem;
+    }
+    
+    .output .lower-display {
+        font-size: 2.2rem;
+    }
+}
